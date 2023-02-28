@@ -11,7 +11,7 @@ const clientSearch = new Client({
 });
 // Create a local server to receive data from
 const server = http.createServer();
-
+console.log("Hey");
 // Listen to the request event
 server.on('request', (request, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' });
