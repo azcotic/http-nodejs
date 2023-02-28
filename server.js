@@ -348,7 +348,7 @@ catch(err){
     res.status(500).send({code:0,data:[]});
 }
 });
-app.listen(3000, () =>
+app.listen(process.env.PORT, () =>
   console.log('Example app listening on port 3000!'),
 );
 /* server.on('request', (req, res) => {
