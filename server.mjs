@@ -4,6 +4,11 @@
 import * as http from 'http';
 import * as url from 'url';
 import moment from 'moment';
+import express from 'express';
+var router = express.Router();
+const app = express();
+
+
 //var url = require("url");
 //const { elasticSearch } = require('./config');
 //const { Client } = require('@elastic/elasticsearch')
@@ -73,10 +78,13 @@ async getDataAggregate(query,page,limit,range){
 }
 const elasticSearchClient = new ElasticSearchService(false,false);
 // Create a local server to receive data from
-const server = http.createServer();
+//const server = http.createServer();
 console.log("Hey");
 // Listen to the request event
-server.on('request', (req, res) => {
+app.listen(3000, () =>
+  console.log('Example app listening on port 3000!'),
+);
+/* server.on('request', (req, res) => {
   var parsedUrl = url.parse(req.url, true); // true to get query as object
   var queryAsObject = parsedUrl.query;
   //console.log(1)
@@ -228,104 +236,9 @@ server.on('request', (req, res) => {
       console.log(err)
     }
   }
-  //console.log(req);
-  //let {page,query,limit,table,from,to,flag} = req.query;
-  //console.log(from);
-  //console.log(to);
-  
-  //res.write(''); 
-  /* res.end(JSON.stringify([{
-    id: 1,
-    customer: 'DIEBOLD',
-    manufacturer: "DIEBOLDManufacturer",
-    partnumber: "170-00140",
-    amount: 1740,
-    amountPYTD: 1740,
-    amountSubs: 0,
-    percentage: 10,
-    date: '2013/01/06',
-  }, {
-    id: 2,
-    customer: 'CROWN EQUIPMENT/CONT',
-    manufacturer: "HONEYWELL",
-    partnumber: "170-00141",
-    amount: 850,
-    amountPYTD: 940,
-    amountSubs: -100,
-    percentage: 10,
-    date: '2013/01/13',
-  },
-  {
-    id: 3,
-    customer: 'CROWN EQUIPMENT/CONT',
-    manufacturer: "HONEYWELL",
-    partnumber: "170-00142",
-    amount: 850,
-    amountPYTD: 1000,
-    amountSubs: -150,
-    percentage: 10,
-    date: '2013/01/13',
-  },
-  {
-    id: 4,
-    customer: 'BORGWARNER',
-    manufacturer: "LAIRD TECHNOLOGIES",
-    partnumber: "180-00141",
-    amount: 850,
-    amountPYTD: 200,
-    amountSubs: 650,
-    percentage: 10,
-    date: '2013/01/13',
-  },
-  {
-    id: 5,
-    customer: 'BORGWARNER',
-    manufacturer: "LAIRD TECHNOLOGIES",
-    partnumber: "180-00141",
-    amount: 850,
-    amountPYTD: 1000,
-    amountSubs: -150,
-    percentage: 10,
-    date: '2013/01/13',
-  },
-  {
-    id: 6,
-    customer: 'BORGWARNER',
-    manufacturer: "LAIRD TECHNOLOGIES",
-    partnumber: "180-00142",
-    amount: 850,
-    amountPYTD: 300,
-    amountSubs: 550,
-    percentage: 10,
-    date: '2013/01/13',
-  },
-  {
-    id: 7,
-    customer: 'BORGWARNER',
-    manufacturer: "LAIRD TECHNOLOGIES",
-    partnumber: "180-00142",
-    amount: 850,
-    amountPYTD: 300,
-    amountSubs: 550,
-    percentage: 10,
-    date: '2013/11/13',
-  },
-  {
-    id: 8,
-    customer: 'BORGWARNER',
-    manufacturer: "LAIRD TECHNOLOGIES",
-    partnumber: "180-00142",
-    amount: 850,
-    amountPYTD: 300,
-    amountSubs: 550,
-    percentage: 10,
-    date: '2013/06/13',
-  }])); */
-  /* res.end(JSON.stringify({
-    data: 'Hello World!',
-  })); */
+
 });
- server.listen(process.env.PORT);
+ server.listen(process.env.PORT); */
 
 
 
