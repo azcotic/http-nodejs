@@ -16,7 +16,7 @@ console.log("Hey");
 server.on('request', (request, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' });
   res.write('');
-  return res.end(JSON.stringify([{
+  res.end(JSON.stringify([{
     id: 1,
     customer: 'DIEBOLD',
     manufacturer: "DIEBOLDManufacturer",
