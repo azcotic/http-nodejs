@@ -15,7 +15,7 @@ console.log("Hey");
 // Listen to the request event
 server.on('request', (request, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.write('');
+  res.write(''); 
   res.end(JSON.stringify([{
     id: 1,
     customer: 'DIEBOLD',
