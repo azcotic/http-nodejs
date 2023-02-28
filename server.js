@@ -203,7 +203,7 @@ app.get('/', (req, res) => {
     let resbefore = elasticSearchClient.getDataAggregate(query,page,limit,pastyear);
     Promise.all([resnow,resbefore]).then((results)=>{
         //console.log(results);
-        console.log(results)
+        //console.log(results)
         if(!results[0]?.aggregations){
             return res.status(200).send({code:0,msg:"Error: Can't get results from range"});
         }
@@ -309,8 +309,8 @@ app.get('/', (req, res) => {
                 }
                 
             })
-            console.log("onlybefore");
-            console.log(onlybefore)
+            //console.log("onlybefore");
+            //console.log(onlybefore)
             //console.log(desAggregateArray);
 
             return res.status(200).send({code:1,data:desAggregateArray.concat(onlybefore) || []});
