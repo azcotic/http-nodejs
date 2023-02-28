@@ -80,7 +80,13 @@ server.on('request', (req, res) => {
   var parsedUrl = url.parse(req.url, true); // true to get query as object
   var queryAsObject = parsedUrl.query;
   //console.log(1)
-  res.writeHead(200, { 'Content-Type': 'application/json' });
+  res.writeHead(200, { 'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, DELETE',
+  'Allow': 'GET, POST, OPTIONS, PUT, DELETE',
+  'Access-Control-Allow-Headers': 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method' });
+  
+
   res.write(''); 
   //console.log(2)
   //console.log(queryAsObject.query);
