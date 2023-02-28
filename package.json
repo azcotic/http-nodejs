@@ -4,8 +4,9 @@
   "main": "index.js",
   "author": "Aiden Bai",
   "license": "MIT",
+  "type":"module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.mjs"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.5.0",

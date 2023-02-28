@@ -1,11 +1,13 @@
 //import { createServer } from 'http';
 //const http http'
-var http = require('http');
-const { elasticSearch } = require('./config');
-const { Client } = require('@elastic/elasticsearch')
+//var http = require('http');
+import * as http from 'http';
+//const { elasticSearch } = require('./config');
+//const { Client } = require('@elastic/elasticsearch')
+import {Client} from '@elastic/elasticsearch';
 const clientSearch = new Client({
-  cloud: { id:  elasticSearch.clusterId },
-  auth: { apiKey:  elasticSearch.apiKey },
+  cloud: { id:  'RepfabricElastic:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvOjQ0MyQxNjJjYzY4ZTYzNjc0YmUwOTkzNTFiMjM1MzRmY2FmYiQzNWEzMDEzZDU0ZTg0MTgxOTczNjdmOWU5OWM4NjY1Ng==' },
+  auth: { apiKey:  'S01vQlZZWUJDdmNRXzhlSmk4eDM6dDc5OFpLaWlUSmluNEU4d3MyZW5ldw==' },
 });
 // Create a local server to receive data from
 const server = http.createServer();
